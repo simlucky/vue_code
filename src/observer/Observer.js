@@ -1,4 +1,6 @@
 import { defineReactiveData } from './reactive';
+import { arr_methods } from './array';
+import { observeArr } from './observe';
 
 export default class Observer {
     constructor(data) {
@@ -7,7 +9,8 @@ export default class Observer {
     }
     init() {
         if (Array.isArray(this.data)) {
-
+            this.data.__proto__ = arr_methods;
+            observeArr(this.data);
         } else {
             this.walk(this.data);
         }
