@@ -10,19 +10,24 @@
 
 <body>
     <div id="app" style="color: red; font-size: 20px">
-        你好，{{ name }} <span class="text" style="color: green">{{age}}</span>
-        <!-- hello {{name}}
+        你好，{{ name }}
+        <span class="text" style="color: green">{{age}}</span>
+    </div>
+    <!-- hello {{name}}
         <h1>{{name}}</h1>
         <ul>
             <li style="color: green">{{age}}</li>
             <li>{{info.job}}</li>
         </ul> -->
-    </div>
 
     <script src="dist/umd/vue.js"></script>
     <script>
         const vm = new Vue({
             el: '#app',
+            template: `<div id=app style="color: red; font-size: 20px">
+        你好，{{ name }}
+        <span class="text" style="color: green">{{age}}</span>
+    </div>`,
             data() {
                 return {
                     name: '小野森森',
@@ -47,8 +52,8 @@
 
         // vm.name = '小邓'
         // console.log(vm.name);
-        console.log(vm.hobby.push('array'))
-        console.log(vm.hobby);
+        // console.log(vm.hobby.push('array'))
+        // console.log(vm);
     </script>
 </body>
 
